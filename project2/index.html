@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Coffee Shop</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Coffee Menu</h1>
+
+        <div class="menu">
+            <div class="menu">
+                <div class="item">
+                    <img src="images/dark-coffee.jpg" alt="Dark Coffee">
+                    <h3>Dark Coffee</h3>
+                    <p>Small Cup: Rs.50</p>
+                    <p>Regular Cup: Rs.70</p>
+                    <p>Large Cup: Rs.100</p>
+                </div>
+                <div class="item">
+                    <img src="images/milk-coffee.jpg" alt="Milk Coffee">
+                    <h3>Milk Coffee</h3>
+                    <p>Small Cup: Rs.70</p>
+                    <p>Regular Cup: Rs.90</p>
+                    <p>Large Cup: Rs.120</p>
+                </div>
+                <div class="item">
+                    <img src="images/espresso.jpg" alt="Espresso">
+                    <h3>Espresso</h3>
+                    <p>Small Cup: Rs.100</p>
+                    <p>Regular Cup: Rs.120</p>
+                    <p>Large Cup: Rs.150</p>
+                </div>
+                <div class="item">
+                    <img src="images/americano.jpg" alt="Americano">
+                    <h3>Americano</h3>
+                    <p>Small Cup: Rs.200</p>
+                    <p>Regular Cup: Rs.220</p>
+                    <p>Large Cup: Rs.250</p>
+                </div>
+                <div class="item">
+                    <img src="images/cappuccino.jpg" alt="Cappuccino">
+                    <h3>Cappuccino</h3>
+                    <p>Small Cup: Rs.250</p>
+                    <p>Regular Cup: Rs.270</p>
+                    <p>Large Cup: Rs.300</p>
+                </div>
+                <div class="item">
+                    <img src="images/latte.jpg" alt="Latte">
+                    <h3>Latte</h3>
+                    <p>Small Cup: Rs.250</p>
+                    <p>Regular Cup: Rs.270</p>
+                    <p>Large Cup: Rs.300</p>
+                </div>
+                <div class="item">
+                    <img src="images/mocha.jpg" alt="Mocha">
+                    <h3>Mocha</h3>
+                    <p>Small Cup: Rs.300</p>
+                    <p>Regular Cup: Rs.320</p>
+                    <p>Large Cup: Rs.350</p>
+                </div>
+                <div class="item">
+                    <img src="images/macchiato.jpeg" alt="Macchiato">
+                    <h3>Macchiato</h3>
+                    <p>Small Cup: Rs.250</p>
+                    <p>Regular Cup: Rs.270</p>
+                    <p>Large Cup: Rs.300</p>
+                </div>
+                <div class="item">
+                    <img src="images/frappuccino.jpg" alt="Frappuccino">
+                    <h3>Frappuccino</h3>
+                    <p>Small Cup: Rs.400</p>
+                    <p>Regular Cup: Rs.430</p>
+                    <p>Large Cup: Rs.450</p>
+                </div>
+                <div class="item">
+                    <img src="images/cold-brew.jpg" alt="Cold Brew">
+                    <h3>Cold Brew</h3>
+                    <p>Small Cup: Rs.350</p>
+                    <p>Regular Cup: Rs.370</p>
+                    <p>Large Cup: Rs.400</p>
+                </div>
+                <div class="item">
+                    <img src="images/iced-coffee.jpg" alt="Iced Coffee">
+                    <h3>Iced Coffee</h3>
+                    <p>Small Cup: Rs.180</p>
+                    <p>Regular Cup: Rs.200</p>
+                    <p>Large Cup: Rs.250</p>
+                </div>
+                <div class="item">
+                    <img src="images/chai-latte.jpg" alt="Chai Latte">
+                    <h3>Chai Latte</h3>
+                    <p>Small Cup: Rs.350</p>
+                    <p>Regular Cup: Rs.370</p>
+                    <p>Large Cup: Rs.400</p>
+                </div>
+            </div>
+            
+        </div>
+        <div class="order-section">
+        <div class="menu-item">
+            <select id="item">
+                <option value="Dark Coffee">Dark Coffee</option>
+                <option value="Milk Coffee">Milk Coffee</option>
+                <option value="Espresso">Espresso</option>
+                <option value="Americano">Americano</option>
+                <option value="Cappuccino">Cappuccino</option>
+                <option value="Latte">Latte</option>
+                <option value="Mocha">Mocha</option>
+                <option value="Macchiato">Macchiato</option>
+                <option value="Frappuccino">Frappuccino</option>
+                <option value="Cold Brew">Cold Brew</option>
+                <option value="Iced Coffee">Iced Coffee</option>
+                <option value="Chai Latte">Chai Latte</option>
+            </select>
+        </div>
+        <div class="menu-item">
+            <select id="cupSize">
+                <option value="small">Small</option>
+                <option value="regular">Regular</option>
+                <option value="large">Large</option>
+            </select>
+        </div>
+        <div class="menu-item">
+            <select id="sugarLevel">
+                <option value="Low sugar">Low sugar</option>
+                <option value="Medium sugar">Medium sugar</option>
+                <option value="High sugar">High sugar</option>
+            </select>
+        </div>
+        <div class="menu-item">
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" class="amount" min="1" value="1">
+        </div>
+        <button onclick="addToBill()">Add to Bill</button>
+        <div class="bill">
+            <h2>Bill</h2>
+            <ul id="billList">
+            </ul>
+            <p>Total Bill: <span id="totalAmount">0</span></p>
+        </div>
+        <br>
+        <button onclick="printBill()">Print Bill</button>
+		<button onclick="startAutoRefresh()">New Customer</button>
+    </div>
+    
+    <script>
+        const prices = {
+    "Dark Coffee": {
+        small: 50,
+        regular: 70,
+        large: 100
+    },
+    "Milk Coffee": {
+        small: 70,
+        regular: 90,
+        large: 120
+    },
+    "Espresso": {
+        small: 100,
+        regular: 120,
+        large: 150
+    },
+    "Americano": {
+        small: 200,
+        regular: 220,
+        large: 250
+    },
+    "Cappuccino": {
+        small: 250,
+        regular: 270,
+        large: 300
+    },
+    "Latte": {
+        small: 250,
+        regular: 270,
+        large: 300
+    },
+    "Mocha": {
+        small: 300,
+        regular: 320,
+        large: 350
+    },
+    "Macchiato": {
+        small: 250,
+        regular: 270,
+        large: 300
+    },
+    "Frappuccino": {
+        small: 400,
+        regular: 430,
+        large: 450
+    },
+    "Cold Brew": {
+        small: 350,
+        regular: 370,
+        large: 400
+    },
+    "Iced Coffee": {
+        small: 180,
+        regular: 200,
+        large: 250
+    },
+    "Chai Latte": {
+        small: 350,
+        regular: 370,
+        large: 400
+    }
+};
+
+        const bill = [];
+
+        function addToBill() {
+            const selectedItem = document.getElementById("item").value;
+            const selectedCupSize = document.getElementById("cupSize").value;
+            const selectedSugerLevel = document.getElementById("sugarLevel").value;
+            const amount = parseInt(document.getElementById("amount").value);
+
+            const price = prices[selectedItem][selectedCupSize];
+            const total = price * amount;
+
+            bill.push({
+                item: selectedItem,
+                cupSize: selectedCupSize,
+                sugarLevel: selectedSugerLevel,
+                amount: amount,
+                total: total
+            });
+
+            updateBill();
+        }
+
+        function updateBill() {
+            const billList = document.getElementById("billList");
+            const totalAmountElement = document.getElementById("totalAmount");
+
+            billList.innerHTML = "";
+            let totalAmount = 0;
+
+            bill.forEach(item => {
+                const listItem = document.createElement("li");
+                listItem.textContent = `${item.amount}x ${item.item} (${item.cupSize}) (${item.sugarLevel})➡ Rs.${item.total}`;
+                billList.appendChild(listItem);
+                totalAmount += item.total;
+            });
+
+            totalAmountElement.textContent = totalAmount;
+        }
+
+        function printBill() {
+            const printContent = document.querySelector('.bill').outerHTML;
+            const originalContent = document.body.innerHTML;
+            document.body.innerHTML = printContent;
+            window.print();
+            document.body.innerHTML = originalContent;
+        }
+		
+		let intervalId;
+
+    function startAutoRefresh() {
+      // Set the interval to refresh every 5 seconds (5000 milliseconds)
+      intervalId = setInterval(function() {
+        location.reload();
+      }, 100);
+    }
+
+    function stopAutoRefresh() {
+      // Clear the interval to stop the auto-refresh
+      clearInterval(intervalId);
+    }
+		
+		
+    </script>
+</body>
+</html>

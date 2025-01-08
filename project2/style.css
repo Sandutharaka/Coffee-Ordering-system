@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f3e9; /* Creamy background color */
+    color: #49392c; /* Dark brown text color */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #e0cfaa; /* Light brown container background color */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-section{
+    width: 35%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #704818; /* Coffee brown heading color */
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.menu-item img {
+    max-width: 100px;
+    margin-right: 10px;
+    border-radius: 10px; /* Rounded corners for item images */
+}
+
+.menu-item select {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #49392c; /* Dark brown border for select boxes */
+    border-radius: 5px;
+    background-color: #e0cfaa; /* Light brown select box background color */
+}
+
+.menu-item label {
+    margin-right: 10px;
+    color: #704818; /* Coffee brown label color */
+}
+
+button {
+    background-color: #704818; /* Coffee brown button background color */
+    color: #f7f3e9; /* Creamy button text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #49392c; /* Dark brown button background color on hover */
+}
+
+.bill {
+    border: 1px solid #49392c; /* Dark brown border for bill section */
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #f7f3e9; /* Creamy bill section background color */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#billList {
+    list-style: none;
+    padding: 0;
+}
+
+#totalAmount {
+    font-weight: bold;
+    color: #704818; /* Coffee brown total amount color */
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .item {
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .item:hover {
+    border: 0px solid #14c92f;
+    box-shadow: 0px 0px 60px #931e1e;
+  }
+  
+  .item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .item h3 {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+  .amount{
+    height: 30px;
+  }
